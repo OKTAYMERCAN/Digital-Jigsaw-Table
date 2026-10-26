@@ -70,45 +70,14 @@ Everything is restored exactly: piece positions, joined groups, elapsed time, an
 
 ## 📸 Screenshots
 
-(Start screen — picture, piece count and saves)  
-<img src="docs/screenshot-start.png" alt="Start screen" width="860">
+<img width="2560" height="1356" alt="Screenshot_20261026_134224" src="https://github.com/user-attachments/assets/c88ee3a0-cf30-4726-83d1-78a6e82735c2" />  
 
-(Playing — frame on top, piece tray below)  
-<img src="docs/screenshot-game.png" alt="Gameplay in the light theme" width="860">
+<img width="2543" height="1312" alt="Screenshot_20261026_140956" src="https://github.com/user-attachments/assets/8e827923-f71c-4bcd-aeac-d00240af6906" />
 
-(Pure-black OLED theme)  
-<img src="docs/screenshot-oled.png" alt="Gameplay in the OLED black theme" width="860">
+<img width="2560" height="1313" alt="Screenshot_20261026_135621" src="https://github.com/user-attachments/assets/1a0cb003-1037-4fa4-af96-516b42eea433" />
 
-(On a phone)  
+<img width="2560" height="1309" alt="Screenshot_20261026_140610" src="https://github.com/user-attachments/assets/4462da0f-bd27-4aa5-91ff-5b5aa1fbcc98" />
 
-| Start screen | Playing |
-|---|---|
-| <img src="docs/screenshot-mobile-start.png" alt="Mobile start screen" width="300"> | <img src="docs/screenshot-mobile-game.png" alt="Mobile gameplay" width="300"> |
-
-## ⚙️ Customisation
-
-Everything below can be changed from the interface without touching the code:
-
-| Setting | What it does |
-|---|---|
-| Picture | One of three built-in pictures (Sunset, Nature, Space) or any image of your own |
-| Piece count | A preset, or any number from 12 to 20,000 |
-| Language | Turkish or English (the top-left switch on the start screen, or the **EN / TR** button while playing) |
-| Theme | Light or pure-black OLED |
-| Sound | Small click and snap sounds, on or off |
-
-The three sample pictures are drawn by code at start-up, so the file contains no image data at all. If you want to edit the source, the project is one HTML file: the colour palette and theme tokens are in the `:root` blocks at the top of the stylesheet, the preset piece counts are the `COUNTS` array, and all interface text lives in the `I18N` dictionary (one block per language).
-
-## 🧱 Big puzzles & performance
-
-The app is built to stay smooth even with very large piece counts:
-
-* **Sprites, not pictures:** Each piece is cut once into a small sprite and the picture itself is not drawn during play. Pieces that are too small to see (when you zoom far out) are drawn as simple colour tiles.
-* **Fast dragging:** While you hold a piece, everything else on the table is kept as one ready-made image, so only the piece in your hand is redrawn on each frame.
-* **Memory-aware cutting:** The sprite size is chosen from a memory budget, so a 20,000-piece puzzle fits in a normal browser tab.
-* **Honest warnings:** From 5,000 pieces the start screen shows an estimated memory use. From 10,000 pieces it warns that low-end systems may stutter, and from 15,000 it recommends a powerful computer with at least 8 GB of memory.
-
-Preparing a puzzle takes a few seconds for thousands of pieces and up to about half a minute for the largest ones.
 
 ### Performance panel
 
